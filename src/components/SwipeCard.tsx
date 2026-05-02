@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import Image from 'next/image';
 
 export interface Pet {
   id: number;
@@ -93,13 +92,12 @@ export default function SwipeCard({ pet, onSwipe, isTop }: SwipeCardProps) {
       <div className="w-full h-full bg-white rounded-3xl shadow-2xl overflow-hidden select-none">
         {/* Pet photo */}
         <div className="relative w-full" style={{ height: '65%' }}>
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={pet.photo_url}
             alt={pet.name}
-            fill
-            className="object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             draggable={false}
-            sizes="(max-width: 448px) 100vw, 448px"
           />
 
           {/* Like / Pass overlay badges */}

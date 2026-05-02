@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 interface Match {
@@ -67,22 +66,12 @@ export default function MatchesClient() {
               {/* Pet photos */}
               <div className="relative flex-shrink-0">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-pink-200">
-                  <Image
-                    src={match.their_pet_photo}
-                    alt={match.their_pet_name}
-                    width={64}
-                    height={64}
-                    className="object-cover w-full h-full"
-                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={match.their_pet_photo} alt={match.their_pet_name} className="object-cover w-full h-full" />
                 </div>
                 <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full overflow-hidden border-2 border-white">
-                  <Image
-                    src={match.my_pet_photo}
-                    alt={match.my_pet_name}
-                    width={28}
-                    height={28}
-                    className="object-cover w-full h-full"
-                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={match.my_pet_photo} alt={match.my_pet_name} className="object-cover w-full h-full" />
                 </div>
               </div>
 

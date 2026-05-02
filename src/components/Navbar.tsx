@@ -38,13 +38,18 @@ export default function Navbar({ userName }: { userName: string }) {
               {label}
             </Link>
           ))}
-          <button
-            onClick={handleLogout}
-            title="Sign out"
-            className="ml-2 text-sm text-gray-400 hover:text-gray-600 transition"
-          >
-            {userName.split(' ')[0]}
-          </button>
+          <div className="ml-2 flex items-center gap-2 pl-2 border-l border-gray-100">
+            <span className="text-sm font-medium text-gray-600 max-w-[80px] truncate">
+              {userName.split(' ')[0]}
+            </span>
+            <button
+              onClick={handleLogout}
+              title="Sign out"
+              className="text-xs text-gray-400 hover:text-red-500 border border-gray-200 hover:border-red-300 rounded-lg px-2 py-1 transition"
+            >
+              Sign out
+            </button>
+          </div>
         </div>
       </div>
     </nav>
